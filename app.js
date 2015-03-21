@@ -1,27 +1,67 @@
 /*jshint node:true*/
-
-// app.js
-// This file contains the server side JavaScript code for your application.
-// This sample application uses express as web application framework (http://expressjs.com/),
-
+//Dependencies
 var express = require('express');
+var watson = require('watson-developer-cloud');
 
-// setup middleware
+// setup server middleware
 var app = express();
 app.use(app.router);
 app.use(express.errorHandler());
 app.use(express.static(__dirname + '/public')); //setup static public directory
-
-// There are many useful environment variables available in process.env.
-// VCAP_APPLICATION contains useful information about a deployed application.
+app.use(express.static(__dirname + '/bower_components'));
+// Bluemix app & service info
 var appInfo = JSON.parse(process.env.VCAP_APPLICATION || "{}");
 // TODO: Get application information and use it in your app.
-
-// VCAP_SERVICES contains all the credentials of services bound to
-// this application. For details of its content, please refer to
-// the document or sample of each service.
 var services = JSON.parse(process.env.VCAP_SERVICES || "{}");
 // TODO: Get service credentials and communicate with bluemix services.
+
+var speech_to_text = watson.speech_to_text({
+  username: '3356150d-abe8-4612-95e2-16afa492a24f',
+  password: 'gVNaGjswkXeV',
+  version: 'v1'
+});
+
+var text_to_speech = watson.text_to_speech({
+  username: '8e3ad5ac-49f2-4524-8aec-52ee475eedb6',
+  password: 'v3DXJzQRfSEX', //LOL!
+  version: 'v1'
+});
+
+app.get('/synthesize', function(req, res) {
+  var transcript = textToSpeech.synthesize(req.query);
+
+  transcript.on('response', function(response) {
+    console.log(response.headers);
+    if (req.query.download) {
+      response.headers['content-disposition'] = 'attachment; filename=transcript.ogg';
+    }
+  });
+  transcript.pipe(res);
+});
+
+//----- Example Speach->Text from https://www.npmjs.com/package/watson-developer-cloud
+// var params = {
+//   // From file 
+//   audio: request('http://speech-to-text-demo.mybluemix.net/audio/sample1.wav'),
+//   content_type: 'audio/l16; rate=44100'
+// };
+// speech_to_text.recognize(params, function(err, res) {
+//   if (err)
+//     console.log(err);
+//   else
+//     console.log(JSON.stringify(res, null, 2));
+// });
+
+
+//----- Example Text->Speach from https://www.npmjs.com/package/watson-developer-cloud
+// var params = {
+//     text: 'Hello from IBM Watson',
+//     voice: 'VoiceEnUsMichael', // optional voice 
+//     accept: 'audio/wav'
+// };
+// // pipe the synthesized text to a file 
+// text_to_speech.synthesize(params).pipe(fs.createWriteStream('output.wav'));
+
 
 // The IP address of the Cloud Foundry DEA (Droplet Execution Agent) that hosts this application:
 var host = (process.env.VCAP_APP_HOST || 'localhost');
