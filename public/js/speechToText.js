@@ -10,6 +10,20 @@ $(document).ready(function(){
 		model: 'WatsonModel'
 	});
 
+	$(document).keydown(function(e){
+		if (e.keyCode == 32){
+			micButton.css('background-color', 'red');
+			speech.start();
+		}
+	});
+
+	$(document).keyup(function(e){
+		if (e.keyCode == 32){
+			micButton.css('background-color', 'green');
+			speech.stop();
+		}
+	})
+
 	micButton.click(function() {
 		if (!recording) {
 	    	speech.start();
