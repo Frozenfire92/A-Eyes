@@ -1,7 +1,7 @@
 var WorldLocation = 
 {
-	gridBlock: "",
-	blockSpace: 0
+	gridBlockLetterIndex: "A",
+	blockSpaceIndex: 0
 };
 
 var World = 
@@ -42,7 +42,9 @@ var Ability =
 
 var Chest = 
 {
-	contents: BaseItem
+	name: "",
+	contents: BaseItem,
+	currentLocation: WorldLocation
 };
 
 var Player = 
@@ -64,6 +66,14 @@ var BaseItem =
 	description: "",
 	obtained: false
 };
+
+function CreateLocation(gridBlockLetterIndex, blockSpaceIndex)
+{
+	var newLocation = jQuery.extend(true, {}, WorldLocation);
+	newLocation.gridBlockLetterIndex = gridBlockLetterIndex;
+	newLocation.blockSpaceIndex = blockSpaceIndex;
+	return newLocation;
+}
 
 function CreateWorld (name, size) 
 {
@@ -110,37 +120,32 @@ function CreateBlockSpace(index)
 
 function CreateChest(name, item)
 {
-	var newChest = Chest;
-	newChest.contents = item;
-	if (name == null) newChest.name = "No name";
-	else newChest.name = name;
+	var newChest = jQuery.extend(true, {}, Chest);
+	//newChest.contents = item;
+	newChest.name = name;
 
 	return newChest;
 }
 
 function CreatePlayer(name)
 {
-	var newPlayer = Player;
+	var newPlayer = jQuery.extend(true, {}, Player);
 	newPlayer.name = name;
-	var startLocation = WorldLocation;
-	startLocation.gridBlock = "A";
-	startLocation.blockSpace = 0;
-	newPlayer.currentLocation = startLocation;
+	newPlayer.currentLocation = CreateLocation("A", 5);
 	return newPlayer;
 }
 
-function CreateNPC(name, location, speechContents)
+function CreateNPC(name, speechContents)
 {
-	var newNPC = BaseNPC;
+	var newNPC = jQuery.extend(true, {}, BaseNPC);
 	newNPC.name = name;
-	newNPC.currentLocation = location;
-	newNPC.speechContents = speechContents;
+	if (speechContents != null) newNPC.speechContents = speechContents;
 	return newNPC;
 }
 
 function CreateItem(name, description, obtained)
 {
-	var newItem = BaseItem;
+	var newItem = jQuery.extend(true, {}, BaseItem);
 	newItem.name = name;
 	newItem.description = description;
 	newItem.obtained = obtained;
@@ -149,7 +154,7 @@ function CreateItem(name, description, obtained)
 
 function CreateAbility(name, description, usable)
 {
-	var newAbility = Ability;
+	var newAbility = jQuery.extend(true, {}, Ability);
 	newAbility.name = name;
 	newAbility.description = description;
 	newAbility.usable = usable;
@@ -158,7 +163,7 @@ function CreateAbility(name, description, usable)
 
 function CreateAEye(name, abilities)
 {
-	var newAEye = AEye;
+	var newAEye = jQuery.extend(true, {}, AEye);
 	newAEye.name = name;
 	newAEye.abilities = abilities;
 } 
