@@ -68,3 +68,28 @@ function GetCharacterFromIndex(index)
 	}
 }
 
+function PlayerIsNotInSpace()
+{
+
+	for (var i = 0; i <  world.gridBlocks.length; i++) 
+	{
+		for (var j = 0; j < world.gridBlocks[i].blockSpaces.length; j++)
+		{
+			world.gridBlocks[i].blockSpaces[j].playerIsInSpace = false;
+		}
+	}
+}
+
+function TurnItemUIOn(itemName)
+{
+	switch (itemName)
+	{
+		case "Umbrella": $('#Umbrella').removeClass("hidden"); break;
+		case "GolddenApple": $('#GolddenApple').removeClass("hidden"); break;
+		case "RainbowLollipop": $('#RainbowLollipop').removeClass("hidden"); break;
+		case "TalkingGoldfish": $('#TalkingGoldfish').removeClass("hidden"); break;
+		case "YoYo": $('#YoYo').removeClass("hidden"); break;
+		case "SuperMagnets": $('#SuperMagnets').removeClass("hidden"); break;
+	}
+	
+}

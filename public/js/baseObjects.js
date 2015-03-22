@@ -133,7 +133,7 @@ function CreatePlayer(name)
 {
 	var newPlayer = jQuery.extend(true, {}, Player);
 	newPlayer.name = name;
-	newPlayer.currentLocation = CreateLocation("A", 5);
+	newPlayer.currentLocation = CreateLocation("A", 4);
 	return newPlayer;
 }
 
