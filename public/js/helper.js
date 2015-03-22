@@ -82,10 +82,12 @@ function PlayerIsNotInSpace()
 
 function TurnItemUIOn(itemName)
 {
+	console.log(itemName);
 	switch (itemName)
 	{
+
 		case "Umbrella": $('#Umbrella').removeClass("hidden"); break;
-		case "GolddenApple": $('#GolddenApple').removeClass("hidden"); break;
+		case "GolddenApple": $('#GoldenApple').removeClass("hidden"); break;
 		case "RainbowLollipop": $('#RainbowLollipop').removeClass("hidden"); break;
 		case "TalkingGoldfish": $('#TalkingGoldfish').removeClass("hidden"); break;
 		case "YoYo": $('#YoYo').removeClass("hidden"); break;

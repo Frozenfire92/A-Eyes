@@ -12,13 +12,15 @@
 	<script type="text/javascript" src="../socket.io/socket.io.js"></script>
 	<script type="text/javascript" src="../js/speech-recognizer.js"></script>
 	<script type="text/javascript" src="../js/watson.js"></script>
+	<script type="text/javascript" src="../js/PopulateBlockSpaces.js"></script>
 	<script type="text/javascript" src="../js/helper.js"></script>
 	<script type="text/javascript" src="../js/baseObjects.js"></script>
 	<script type="text/javascript" src="../js/gameController.js"></script>
 	<script type="text/javascript" src="../js/main.js"></script>
 	<script type="text/javascript" src="../js/gameTest.js"></script>
 </head>
-<body class="Home">
+<body class="Home" onload="InstantiateWorld()">
+
 	<!-- Menu Bar -->
 	<div class="header">
 	    <div class="pure-menu pure-menu-horizontal">
@@ -41,14 +43,15 @@
 	    	<h3>Commands</h3>
 	    	
 	    	<aside class="controls">
-	    		<div class="navigate-left enabled"></div>
-	    		<div class="navigate-right enabled"></div>
-	    		<div class="navigate-up enabled"></div>
-	    		<div class="navigate-down enabled"></div>
+	    		<div class="navigate-left enabled"  onclick="MovePlayer('Left')"></div>
+	    		<div class="navigate-right enabled" onclick="MovePlayer('Right')"></div>
+	    		<div class="navigate-up enabled"    onclick="MovePlayer('Up')"></div>
+	    		<div class="navigate-down enabled"  onclick="MovePlayer('Down')"></div>
 	    	</aside>
 
-	    	<button class="pure-button button-large pure-button-primary">Action</button><br><br>
-	    	<button class="pure-button button-large pure-button-primary">Interact with A-Eye</button><br><br>
+	    	<button class="pure-button button-large pure-button-primary" onclick="Find()">Find</button><br><br>
+	    	<button class="pure-button button-large pure-button-primary" onclick="Talk()">Talk</button><br><br>
+	    	<button class="pure-button button-large pure-button-primary" onclick="Describe()">Describe</button><br><br>
 
 			<hr>
 

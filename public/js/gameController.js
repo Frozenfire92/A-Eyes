@@ -31,6 +31,7 @@ function TakeAction(actionToTake)
 		case "MoveLeft": 	MovePlayer("Left"); break;
 		case "Find": 		Find(); break;
 		case "Talk": 		Talk(); break;
+		case "Describe": 		Talk(); break;
 	}
 }
 
@@ -48,6 +49,11 @@ function Find()
 function Talk()
 {
 	console.log("Talking to NPC: ", FindItemOnBlockSpace(FindBlockSpace(player.currentLocation), "NPC"));
+}
+
+function Describe()
+{
+	//Read the description of the players current grid block
 }
 
 function MovePlayer(direction)
@@ -274,6 +280,7 @@ function FindItemOnBlockSpace(currentBlockSpace, itemToFind)
 				//Give player that spaceItem
 				items.push(currentBlockSpace.spaceItem.item.name);
 				TurnItemUIOn(currentBlockSpace.spaceItem.item.name);
+				textToSpeech ("You found the "+ currentBlockSpace.spaceItem.item.name);
 				return true;
 			}
 			else return false;
