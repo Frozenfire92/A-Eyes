@@ -1,11 +1,21 @@
 // Pass a string of input and it will automatically play
 // the returned audio
-function textToSpeech(input)
+function textToSpeech(input){
+	textToSpeechMale(input);
+}
+function textToSpeechMale(input)
 {
 	var audio = $('audio').get(0);
 	var text = {text: input};
 	console.log('raw input', input);
-	audio.setAttribute('src','/synthesize?' + $.param(text));
+	audio.setAttribute('src','/synthesizeMale?' + $.param(text));
+}
+function textToSpeechFemale(input)
+{
+	var audio = $('audio').get(0);
+	var text = {text: input};
+	console.log('raw input', input);
+	audio.setAttribute('src','/synthesizeFemale?' + $.param(text));
 }
 
 // Speech to Text logic
@@ -67,10 +77,10 @@ $(document).ready(function(){
 			{
 				var text = data.results[0].alternatives[0].transcript || "Sorry I didn't get that";
 				if (data.results[0].final){
-					text += '.';
 					microphone.removeClass('orange');
 					microphone.removeClass('green');
 					instructions.html("Press space to talk");
+					parseSpeech(text);
 				}
 				recentCommand.html(text);
 			}
@@ -78,3 +88,59 @@ $(document).ready(function(){
 		recentCommand.show();
 	};
 });
+
+function parseSpeech(input)
+{
+	input = input.toLowerCase();
+	//--- Movement
+	//Up
+	if (input.indexOf("up") != -1 ||
+		input.indexOf("forward") != -1 ||
+		input.indexOf("north") != -1)
+	{}
+	//Down
+	else if (input.indexOf("down") != -1 ||
+			 input.indexOf("backwards") != -1 ||
+			 input.indexOf("south") != -1)
+	{}
+	//Right
+	else if (input.indexOf("right") != -1 ||
+			 input.indexOf("east") != -1)
+	{}
+	//Left
+	else if (input.indexOf("left") != -1 ||
+			 input.indexOf("west") != -1)
+	{}
+
+	//--- Describe
+	else if (input.indexOf("describe") != -1 ||
+			 input.indexOf("description") != -1)
+	{}
+
+	//--- Help
+	else if (input.indexOf("help") != -1 ||
+			 input.indexOf("instruction") != -1 ||
+			 input.indexOf("teach") != -1)
+	{}
+	
+	//--- Home
+	else if (input.indexOf("home") != -1)
+	{}
+
+	//--- Find
+	else if (input.indexOf("find") != -1 ||
+			 input.indexOf("search") != -1 ||
+			 input.indexOf("explore") != -1)
+	{}
+
+	//--- Talk
+	else if (input.indexOf("talk") != -1 ||
+			 input.indexOf("speak") != -1 ||
+			 input.indexOf("conversation") != -1 ||
+			 input.indexOf("converse") != -1)
+	{}
+
+	//Else alert the user of unknown command
+	else textToSpeech("Sorry, unknown command");
+
+}
