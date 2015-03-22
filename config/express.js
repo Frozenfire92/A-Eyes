@@ -36,10 +36,43 @@ module.exports = function (app, speechToText, textToSpeech) {
 	if (!process.env.VCAP_SERVICES) app.use(errorhandler());
 
 	// Route For text 2 speech
-	app.get('/synthesize', function(req, res) {
+	app.get('/synthesizeMale', function(req, res) {
 		var synthReq = {
 			accept: "audio/ogg; codecs=opus",
 			voice: "VoiceEnUsMichael",
+			text: req.query.text
+		};
+		var transcript = textToSpeech.synthesize(synthReq);
+		transcript.on('response', function(response) {
+	    	console.log(response.headers);
+	    	if (req.query.download) {
+	      		response.headers['content-disposition'] = 'attachment; filename=transcript.ogg';
+	    	}
+	  	});
+	  	transcript.pipe(res);
+	});
+
+	// Route For text 2 speech
+	app.get('/synthesizeMale', function(req, res) {
+		var synthReq = {
+			accept: "audio/ogg; codecs=opus",
+			voice: "VoiceEnUsMichael",
+			text: req.query.text
+		};
+		var transcript = textToSpeech.synthesize(synthReq);
+		transcript.on('response', function(response) {
+	    	console.log(response.headers);
+	    	if (req.query.download) {
+	      		response.headers['content-disposition'] = 'attachment; filename=transcript.ogg';
+	    	}
+	  	});
+	  	transcript.pipe(res);
+	});
+
+	app.get('/synthesizeFemale', function(req, res) {
+		var synthReq = {
+			accept: "audio/ogg; codecs=opus",
+			voice: "VoiceEnUsLisa",
 			text: req.query.text
 		};
 		var transcript = textToSpeech.synthesize(synthReq);
