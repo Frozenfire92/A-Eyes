@@ -12,17 +12,17 @@ $(document).ready(function(){
 
 	$(document).keydown(function(e){
 		if (e.keyCode == 32){
-			micButton.css('background-color', 'red');
+			if (!recording)
+			{
+				speech.start();
+				micButton.css('background-color', 'red');
+			} else {
+				speech.stop();
+				micButton.css('background-color', 'green');
+			}
 			speech.start();
 		}
 	});
-
-	$(document).keyup(function(e){
-		if (e.keyCode == 32){
-			micButton.css('background-color', 'green');
-			speech.stop();
-		}
-	})
 
 	micButton.click(function() {
 		if (!recording) {
@@ -34,6 +34,7 @@ $(document).ready(function(){
 	});
 
 	speech.onstart = function(){
+		console.log('recording');
 		recording = true;
 		micButton.css('background-color', 'red');
 		transcript.empty();
@@ -54,10 +55,11 @@ $(document).ready(function(){
 	};
 
 	speech.onresult = function(data){
+		console.log('result', data);
 		if (data.results && data.results.length > 0){
 			if (data.results.length === 1){
 				var paragraph = transcript.children().last();
-				var text = data.results[0].alternatives[0].transcript || '';
+				var text = data.results[0].alternatives[0].transcript || "Sorry I didn't get that";
 				//If final add a new paragraph
 				if (data.results[0].final){
 					transcript.append('<p></p>');

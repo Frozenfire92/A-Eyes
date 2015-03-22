@@ -1,82 +1,83 @@
-/* style.css
- * This file provides css styles.
- */
-
-body,html {
-	background-color: #3b4b54; width : 100%;
-	height: 100%;
-	margin: 0 auto;
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-	color: #ffffff;
-}
-
-a {
-	text-decoration: none;
-	color: #00aed1;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
-img {
-	padding-top: 10%;
-	display: block;
-	margin: 0 auto;
-	padding-bottom: 2em;
-	max-width:200px;
-}
-
-h1 {
-	font-weight: bold;
-	font-size: 2em;
-}
-
-.leftHalf {
-	float: left;
-	background-color: #26343f;
-	width: 45%;
-	height: 100%;
-}
-
-.rightHalf {
+.pure-menu-list {
 	float: right;
-	width: 55%;
-	background-color: #313f4a;
-	height: 100%;
-	overflow:auto;
 }
 
-.blue {
-	color: #00aed1;
+.splash-head {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    border: 3px solid black;
+    padding: 1em 1.6em;
+    font-weight: 100;
+    border-radius: 5px;
+    line-height: 1em;
+    width: 50%;
+    margin: 0 auto;
 }
 
-
-table {
-	table-layout: fixed;
-	width: 800px;
+/*********************************************
+ * CONTROLS from reveal.js - https://github.com/hakimel/reveal.js/
+ *********************************************/
+.controls {
 	margin: 0 auto;
-	word-wrap: break-word;
-	padding-top:10%;
-}
+  display: none;
+  position: relative;
+  width: 110px;
+  height: 110px;
+  z-index: 30;
+  -webkit-user-select: none; }
 
-th {
-	border-bottom: 1px solid #000;
-}
+.controls div {
+  position: absolute;
+  opacity: 0.05;
+  width: 0;
+  height: 0;
+  border: 12px solid transparent;
+  -webkit-transform: scale(0.9999);
+      -ms-transform: scale(0.9999);
+          transform: scale(0.9999);
+  -webkit-transition: all 0.2s ease;
+          transition: all 0.2s ease;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
-th, td {
-	text-align: left;
-	padding: 2px 20px;
-}
+.controls div.enabled {
+  opacity: 0.7;
+  cursor: pointer; }
 
-.env-var {
-	text-align: right;
-	border-right: 1px solid #000;
-	width: 30%;
-}
+.controls div.enabled:active {
+  margin-top: 1px; }
 
-pre {
-	padding: 0;
-	margin: 0;
-}
+.controls div.navigate-left {
+  top: 42px;
+  border-right-width: 22px;
+  border-right-color: #000; }
+
+.controls div.navigate-left.fragmented {
+  opacity: 0.3; }
+
+.controls div.navigate-right {
+  left: 74px;
+  top: 42px;
+  border-left-width: 22px;
+  border-left-color: #000; }
+
+.controls div.navigate-right.fragmented {
+  opacity: 0.3; }
+
+.controls div.navigate-up {
+  left: 42px;
+  border-bottom-width: 22px;
+  border-bottom-color: #000; }
+
+.controls div.navigate-up.fragmented {
+  opacity: 0.3; }
+
+.controls div.navigate-down {
+  left: 42px;
+  top: 74px;
+  border-top-width: 22px;
+  border-top-color: #000; }
+
+.controls div.navigate-down.fragmented {
+  opacity: 0.3; }
 
