@@ -35,3 +35,4 @@ function GetIndexFromCharacter(character)
 		case "Y": return 24;
 	}
 }
+
