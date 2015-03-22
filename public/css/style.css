@@ -27,7 +27,7 @@
     font-weight: bold;
     color: black;
     border: 3px solid black;
-    padding: 1em 1.6em;
+    padding: 1em 1em;
     font-weight: 100;
     border-radius: 5px;
     line-height: 1em;
@@ -35,8 +35,37 @@
     margin: 0 auto;
 }
 
+.about-splash {
+	margin: 25px auto;
+	max-width: 80%;
+	text-align: center;
+	background-color: #ecf0f1;
+	opacity: 0.9;
+}
+
+.subtitle {
+	text-align: center !important;
+}
+
+.about-splash h4 {
+	margin: 20px auto;
+}
+
+.about-splash p {
+	text-align: left;
+	margin: 20px auto;
+}
+
+ul {
+	margin: 20px auto;
+}
+
+li {
+	text-align: left;
+}
+
 .menu-overlays {
-	background-color: #ecf0f1;;
+	background-color: #ecf0f1;
 	padding: 20px;
 	opacity: 0.99;
 }
@@ -76,7 +105,6 @@
 
 .item {
 	display: block;
-	/*width: 90%;*/
 	padding: 5px;
 	margin: 5px;
 }
