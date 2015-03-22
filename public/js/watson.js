@@ -12,6 +12,7 @@ function textToSpeech(input)
 // This is heavily modified from https://github.com/watson-developer-cloud/speech-to-text-nodejs
 $(document).ready(function(){
 	// UI References
+	var instructions = $('#talkIndicator')
 	var microphone = $('#microphone');
 	var recentCommand = $('#recentCommand');
 
@@ -29,10 +30,12 @@ $(document).ready(function(){
 			{
 				speech.start();
 				microphone.addClass('green');
+				talkIndicator.html("Listening, press space again to stop");
 			} else {
 				speech.stop();
 				microphone.removeClass('green');
 				microphone.addClass('orange');
+				talkIndicator.html("Processing Speech");
 			}
 		}
 	});
@@ -66,7 +69,8 @@ $(document).ready(function(){
 				if (data.results[0].final){
 					text += '.';
 					microphone.removeClass('orange');
-					microphone.addClass('green');
+					microphone.removeClass('green');
+					talkIndicator.html("Press space to talk");
 				}
 				recentCommand.html(text);
 			}
