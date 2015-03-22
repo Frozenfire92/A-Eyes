@@ -4,7 +4,7 @@ An Accessible Text Based Adventure Game
 
 Made for the IBM Bluemix Hackathon at Saint Mary's University March 21-22 2015
 
-<a href="https://bluemix.net/deploy?repository=https://hub.jazz.net/git/idsorg/sample-java-cloudant" target="_blank"><img src="http://bluemix.net/deploy/button.png" alt="Bluemix button" /></a>
+<a href="https://bluemix.net/deploy?repository=https://github.com/Frozenfire92/A-Eyes" target="_blank"><img src="http://bluemix.net/deploy/button.png" alt="Bluemix button" /></a>
 
 ### The Challenge
 To create a new genre of games that are more accessible to people who may be visually or physically impaired
