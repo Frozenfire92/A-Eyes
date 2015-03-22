@@ -97,50 +97,92 @@ function parseSpeech(input)
 	if (input.indexOf("up") != -1 ||
 		input.indexOf("forward") != -1 ||
 		input.indexOf("north") != -1)
-	{}
+	{
+		MovePlayer('Up');
+	}
 	//Down
 	else if (input.indexOf("down") != -1 ||
 			 input.indexOf("backwards") != -1 ||
 			 input.indexOf("south") != -1)
-	{}
+	{
+		MovePlayer('Down');
+	}
 	//Right
 	else if (input.indexOf("right") != -1 ||
 			 input.indexOf("east") != -1)
-	{}
+	{
+		MovePlayer('Right');
+	}
 	//Left
 	else if (input.indexOf("left") != -1 ||
 			 input.indexOf("west") != -1)
-	{}
+	{
+		MovePlayer('Left');
+	}
 
 	//--- Describe
 	else if (input.indexOf("describe") != -1 ||
 			 input.indexOf("description") != -1)
-	{}
+	{
+		Describe();
+	}
 
 	//--- Help
 	else if (input.indexOf("help") != -1 ||
 			 input.indexOf("instruction") != -1 ||
 			 input.indexOf("teach") != -1)
-	{}
+	{
+		Help();
+	}
 	
 	//--- Home
 	else if (input.indexOf("home") != -1)
-	{}
+	{
+		GoHome();
+	}
 
 	//--- Find
 	else if (input.indexOf("find") != -1 ||
 			 input.indexOf("search") != -1 ||
 			 input.indexOf("explore") != -1)
-	{}
+	{
+		Find();
+	}
 
 	//--- Talk
 	else if (input.indexOf("talk") != -1 ||
 			 input.indexOf("speak") != -1 ||
 			 input.indexOf("conversation") != -1 ||
 			 input.indexOf("converse") != -1)
-	{}
+	{
+		Talk();
+	}
+
+	//--- Items
+	else if (input.indexOf("item") != -1 ||
+			 input.indexOf("list") != -1 ||
+			 input.indexOf("inventory") != -1)
+	{
+		DescribeItems();
+	}
+
+	//--- Play Minigame
+	else if (input.indexOf("play") != -1 ||
+			 input.indexOf("game") != -1 ||
+			 input.indexOf("mini") != -1)
+	{
+		Play();
+	}
+
+	//--- Where am i
+	else if (input.indexOf("where") != -1 ||
+			 input.indexOf("locate") != -1 ||
+			 input.indexOf("location") != -1)
+	{
+		WhereAmI();
+	}
 
 	//Else alert the user of unknown command
-	else textToSpeech("Sorry, unknown command");
+	else textToSpeech("Sorry, unknown command. Please try again.");
 
 }
