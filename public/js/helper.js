@@ -1,3 +1,9 @@
+function SpeakIntro()
+{
+	var introSpeech = "Welcome to Eyeville. I'm your new A eye. I'll help you to interact with the world and other people. " +
+					  	"You can talk to me to complete tasks and move around the world. Try finding a chest before you move. Maybe you'll get lucky.";
+	textToSpeech(introSpeech);				  	
+}
 
 function IncrementCharacter(character)
 {
@@ -154,7 +160,7 @@ function GetSpeechContents(index)
 		case 7:
 		{
 			speechContents.push("The chest isn't even close.");
-			speechContents.push("I'm searching for my magents, they're super awesome.");
+			speechContents.push("I'm searching for my magnets, they're super awesome.");
 			speechContents.push("Stop being so irrational!");
 			break;
 		}
@@ -166,4 +172,35 @@ function GetSpeechContents(index)
 			break;
 		}
 	}
+
+	return speechContents;
+}
+
+function SetGridBlockNames(world)
+{
+	world.gridBlocks[0].name = "Home";
+	world.gridBlocks[1].name = "Town Square";
+	world.gridBlocks[2].name = "Town Square";
+	world.gridBlocks[3].name = "Town Square";
+	world.gridBlocks[4].name = "Game Town";
+	world.gridBlocks[5].name = "Town House";
+	world.gridBlocks[6].name = "Town Square";
+	world.gridBlocks[7].name = "Town Square";
+	world.gridBlocks[8].name = "Town Square";
+	world.gridBlocks[9].name = "Town House";
+	world.gridBlocks[10].name = "Town House";
+	world.gridBlocks[11].name = "Town Square";
+	world.gridBlocks[12].name = "Town Square";
+	world.gridBlocks[13].name = "Town Square";
+	world.gridBlocks[14].name = "Town House";
+	world.gridBlocks[15].name = "Town House";
+	world.gridBlocks[16].name = "Town Square";
+	world.gridBlocks[17].name = "Town Square";
+	world.gridBlocks[18].name = "Town Square";
+	world.gridBlocks[19].name = "Town House";
+	world.gridBlocks[20].name = "Town House";
+	world.gridBlocks[21].name = "Town Square";
+	world.gridBlocks[22].name = "Town Square";
+	world.gridBlocks[23].name = "Town Square";
+	world.gridBlocks[24].name = "Town House";
 }

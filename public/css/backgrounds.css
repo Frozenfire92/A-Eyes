@@ -41,10 +41,55 @@
 	background-size: 64px 128px
 }
 
+.HouseGroup11 {
+	background:
+		linear-gradient(135deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
+		linear-gradient(225deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
+	background-color:#708090;
+	background-size: 64px 128px
+}
+
+.HouseGroup12 {
+	background:
+		linear-gradient(135deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
+		linear-gradient(225deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
+	background-color:#708090;
+	background-size: 64px 128px
+}
+
+.HouseGroup13 {
+	background:
+		linear-gradient(135deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
+		linear-gradient(225deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
+	background-color:#708090;
+	background-size: 64px 128px
+}
+
 .HouseGroup2 {
 	background-color: #eee;
-	background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), 
-		linear-gradient(-45deg, black 25%, transparent 25%, transparent 75%, black 75%, black);
+	background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, yellow), 
+		linear-gradient(-45deg, black 25%, transparent 25%, transparent 75%, black 75%, yellow);
+	background-size:60px 60px;
+}
+
+.HouseGroup21 {
+	background-color: #eee;
+	background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, blue), 
+		linear-gradient(-45deg, black 25%, transparent 25%, transparent 75%, black 75%, blue);
+	background-size:60px 60px;
+}
+
+.HouseGroup22 {
+	background-color: #eee;
+	background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, green), 
+		linear-gradient(-45deg, black 25%, transparent 25%, transparent 75%, black 75%, green);
+	background-size:60px 60px;
+}
+
+.HouseGroup23 {
+	background-color: #eee;
+	background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, red), 
+		linear-gradient(-45deg, black 25%, transparent 25%, transparent 75%, black 75%, red);
 	background-size:60px 60px;
 }
 

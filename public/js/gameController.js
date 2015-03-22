@@ -1,3 +1,5 @@
+var availableCommands = ["Help", "Move Up", "Move Down", "Move Right", "Move Left", "Describe the Area", "Find a chest",
+						 "Play a game", "Talk to someone", "Go Home", "Where am I", "List inventory"];
 var player;
 var world;
 var aeye;
@@ -8,12 +10,14 @@ var items = [];
 
 function InstantiateWorld()
 {
+	SpeakIntro();
 	world = CreateWorld("Sarah's World", 5);
 	world.gridBlocks[0].blockSpaces[4].playerIsInSpace = true;
 	SetUpChests();
 	SetUpNPCs();
 	SetUpBackgrounds();
 	SetUpDescriptions();
+	SetGridBlockNames(world);
 
 	console.log("This is my world ", world);
 
@@ -42,7 +46,6 @@ function Find()
 	if (FindItemOnBlockSpace(blockSpaceToCheck, "Chest"))
 	{
 		blockSpaceToCheck.occupied = false;
-		blockSpaceToCheck.spaceItem = null;
 		console.log ("ITEMS: ", items);
 	}
 }
@@ -50,6 +53,7 @@ function Find()
 function Talk()
 {
 	console.log("Talking to NPC: ", FindItemOnBlockSpace(FindBlockSpace(player.currentLocation), "NPC"));
+	var blockSpaceToCheck = FindBlockSpace(player.currentLocation);
 }
 
 function Describe()
@@ -66,11 +70,17 @@ function GoHome()
 	player.currentLocation = CreateLocation("A", 4);
 	console.log(player, world);
 	textToSpeech("Teleporting home!");
+	$('body').attr('class', "Home");
 }
 
 function Help()
 {
-	textToSpeech("Here are the available commands. ");
+	var availCommands = "Here are the available commands.";
+	availableCommands.forEach(function(command){
+		availCommands += ", ";
+		availCommands += command;
+	});
+	textToSpeech(availCommands);
 }
 
 function Play()
@@ -100,9 +110,16 @@ function DescribeItems()
 
 function WhereAmI()
 {
-	var bs = FindBlockSpace(player.currentLocation);
-	console.log(bs.name);
-	textToSpeech(bs.name);
+	var sayLocation = "";
+	switch (GetCurrentBlockSpace().name)
+	{
+		case "Home": sayLocation += "You are "; break;
+		case "Town House": sayLocation += "You are in a "; break;
+		case "Game House": sayLocation += "You are in the "; break;
+		case "Town Square": sayLocation += "You are in the "; break;
+	}
+	sayLocation += GetCurrentBlockSpace().name;
+	textToSpeech(sayLocation);
 }
 
 function MovePlayer(direction)
@@ -118,7 +135,15 @@ function MovePlayer(direction)
 	else
 	{
 		textToSpeech("Moving "+direction);
+		var currentGridBlock = FindGridBlock(player.currentLocation);
+		$('body').attr('class', currentGridBlock.backgroundClass);
 	}
+}
+
+function GetCurrentBlockSpace()
+{
+	var gridBlockIndex = GetIndexFromCharacter(player.currentLocation.gridBlockLetterIndex);
+	return world.gridBlocks[gridBlockIndex];
 }
 
 function FindLocationToMoveTo(direction)
@@ -249,7 +274,6 @@ function SetUpNPCs()
 	//Create all Chests
 	//Set locations of all chests
 
-
 	var npc1 = PutObjectInBlockSpace(CreateNPC("NPC1", GetSpeechContents(1)), CreateLocation("F", 4));
 	npcs.push(npc1);
 
@@ -287,21 +311,21 @@ function SetUpBackgrounds()
 	world.gridBlocks[7].backgroundClass = "TownSquare";
 	world.gridBlocks[8].backgroundClass = "TownSquare";
 	world.gridBlocks[9].backgroundClass = "HouseGroup2";
-	world.gridBlocks[10].backgroundClass = "HouseGroup1";
+	world.gridBlocks[10].backgroundClass = "HouseGroup11";
 	world.gridBlocks[11].backgroundClass = "TownSquare";
 	world.gridBlocks[12].backgroundClass = "TownSquare";
 	world.gridBlocks[13].backgroundClass = "TownSquare";
-	world.gridBlocks[14].backgroundClass = "HouseGroup2";
-	world.gridBlocks[15].backgroundClass = "HouseGroup1";
+	world.gridBlocks[14].backgroundClass = "HouseGroup21";
+	world.gridBlocks[15].backgroundClass = "HouseGroup12";
 	world.gridBlocks[16].backgroundClass = "TownSquare";
 	world.gridBlocks[17].backgroundClass = "TownSquare";
 	world.gridBlocks[18].backgroundClass = "TownSquare";
-	world.gridBlocks[19].backgroundClass = "HouseGroup2";
-	world.gridBlocks[20].backgroundClass = "HouseGroup1";
+	world.gridBlocks[19].backgroundClass = "HouseGroup22";
+	world.gridBlocks[20].backgroundClass = "HouseGroup13";
 	world.gridBlocks[21].backgroundClass = "TownSquare";
 	world.gridBlocks[22].backgroundClass = "TownSquare";
 	world.gridBlocks[23].backgroundClass = "TownSquare";
-	world.gridBlocks[24].backgroundClass = "HouseGroup2";
+	world.gridBlocks[24].backgroundClass = "HouseGroup23";
 }
 
 function SetUpDescriptions()
@@ -359,50 +383,93 @@ function FindItemOnBlockSpace(currentBlockSpace, itemToFind)
 {
 	//Find either a chest or an NPC in the current block space
 	console.log("Finding item ", itemToFind);
-	switch (itemToFind)
+	if (currentBlockSpace.spaceItem.occupied = false)
 	{
-		case "Chest":  
+		textToSpeech("This space is unoccupied.");
+	}
+	else
+	{
+		textToSpeech("This space is occupied.");
+
+		switch (itemToFind)
 		{
-			if (currentBlockSpace.spaceItem.item != null)
+			case "Chest":  
 			{
-				if (currentBlockSpace.spaceItem.item.name == "Umbrella" ||
-					currentBlockSpace.spaceItem.item.name == "GoldenApple" ||
-					currentBlockSpace.spaceItem.item.name == "RainbowLollipop" ||
-					currentBlockSpace.spaceItem.item.name == "TalkingGoldfish" ||
-					currentBlockSpace.spaceItem.item.name == "YoYo" ||
-					currentBlockSpace.spaceItem.item.name == "SuperMagnets" )
+				if (currentBlockSpace.spaceItem.item != null)
 				{
-					//Give player that spaceItem
-					items.push(currentBlockSpace.spaceItem.item.name);
-					TurnItemUIOn(currentBlockSpace.spaceItem.item.name);
-					textToSpeech ("You found the "+ currentBlockSpace.spaceItem.item.name);
-					return true;
+					if (currentBlockSpace.spaceItem.item.name == "Umbrella" ||
+						currentBlockSpace.spaceItem.item.name == "GoldenApple" ||
+						currentBlockSpace.spaceItem.item.name == "RainbowLollipop" ||
+						currentBlockSpace.spaceItem.item.name == "TalkingGoldfish" ||
+						currentBlockSpace.spaceItem.item.name == "YoYo" ||
+						currentBlockSpace.spaceItem.item.name == "SuperMagnets" )
+					{
+						//Give player that spaceItem
+						items.push(currentBlockSpace.spaceItem.item.name);
+						TurnItemUIOn(currentBlockSpace.spaceItem.item.name);
+						textToSpeech ("You found the "+ currentBlockSpace.spaceItem.item.name);
+						return true;
+					}
+					else
+					{
+					textToSpeech ("There isn't an item here. But there might be a person, try talking.");
+					return false;
+					}
 				}
+				else
+				{
+					textToSpeech ("There isn't anything here.");
+					return false;
+				} 
 			}
-			else
+			case "NPC": 
 			{
-				textToSpeech ("There isn't anything here.");
-				return false;
-			} 
-		}
-		case "NPC": 
-		{
-			if (currentBlockSpace.spaceItem.item == "NPC1" ||
-				currentBlockSpace.spaceItem.item == "NPC2" ||
-				currentBlockSpace.spaceItem.item == "NPC3" ||
-				currentBlockSpace.spaceItem.item == "NPC4" ||
-				currentBlockSpace.spaceItem.item == "NPC5" ||
-				currentBlockSpace.spaceItem.item == "NPC6" ||
-				currentBlockSpace.spaceItem.item == "NPC7" ||
-				currentBlockSpace.spaceItem.item == "NPC8" ) 
-			{
-				textToSpeech("You found an NPC.");
-				return true;
-			}
-			else
-			{
-				textToSpeech ("There is nobody to talk to here.");
-				return false;
+				if (currentBlockSpace.spaceItem.name != null)
+				{
+					if (currentBlockSpace.spaceItem.name == "NPC1" ||
+						currentBlockSpace.spaceItem.name == "NPC2" ||
+						currentBlockSpace.spaceItem.name == "NPC3" ||
+						currentBlockSpace.spaceItem.name == "NPC4" ||
+						currentBlockSpace.spaceItem.name == "NPC5" ||
+						currentBlockSpace.spaceItem.name == "NPC6" ||
+						currentBlockSpace.spaceItem.name == "NPC7" ||
+						currentBlockSpace.spaceItem.name == "NPC8" ) 
+					{
+						console.log("You found an NPC.");
+
+						var contentsToRandomize;
+						switch (currentBlockSpace.spaceItem.name)
+						{
+							case "NPC1": contentsToRandomize = currentBlockSpace.spaceItem.speechContents; break; 
+							case "NPC2": contentsToRandomize = currentBlockSpace.spaceItem.speechContents; break; 
+							case "NPC3": contentsToRandomize = currentBlockSpace.spaceItem.speechContents; break; 
+							case "NPC4": contentsToRandomize = currentBlockSpace.spaceItem.speechContents; break; 
+							case "NPC5": contentsToRandomize = currentBlockSpace.spaceItem.speechContents; break; 
+							case "NPC6": contentsToRandomize = currentBlockSpace.spaceItem.speechContents; break; 
+							case "NPC7": contentsToRandomize = currentBlockSpace.spaceItem.speechContents; break; 
+							case "NPC8": contentsToRandomize = currentBlockSpace.spaceItem.speechContents; break; 
+						}
+
+						switch (Math.ceil(Math.random()*3))
+						{
+							default: 
+							case 0: textToSpeech(contentsToRandomize[0]); break;
+							case 1: textToSpeech(contentsToRandomize[1]); break;
+							case 2: textToSpeech(contentsToRandomize[2]); break;
+						}
+						return true;
+					}
+					else
+					{
+					textToSpeech ("There is nobody to talk to here.");
+					return false;
+					}
+				}
+				else
+				{
+					textToSpeech ("There is nobody to talk to here.");
+					return false;
+				}
 			}
 		}
 	}
