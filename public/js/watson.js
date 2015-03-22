@@ -102,7 +102,7 @@ function parseSpeech(input)
 	}
 	//Down
 	else if (input.indexOf("down") != -1 ||
-			 input.indexOf("backwards") != -1 ||
+			 input.indexOf("backward") != -1 ||
 			 input.indexOf("south") != -1)
 	{
 		MovePlayer('Down');
@@ -145,7 +145,8 @@ function parseSpeech(input)
 	//--- Find
 	else if (input.indexOf("find") != -1 ||
 			 input.indexOf("search") != -1 ||
-			 input.indexOf("explore") != -1)
+			 input.indexOf("explore") != -1 ||
+			 input.indexOf("chest") != -1)
 	{
 		Find();
 	}
