@@ -9,14 +9,9 @@ function InstantiateWorld()
 {
 	world = CreateWorld("Sarah's World", 5);
 	console.log("This is my world ", world);
-	$('#Label1').html("Things are happening");
 
 	SetUpChests();
 	SetUpNPCs();
-	//Create all NPCs
-	//Set locations of all NPCs
-
-
 }
 
 function PutObjectInBlockSpace(objectToPut, locationToPut)

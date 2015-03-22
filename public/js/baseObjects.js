@@ -21,10 +21,15 @@ var GridBlock =
 
 var BlockSpace =
 {
+	globalIndex:0,
 	index: 0,
 	spaceItem: {},
 	occupied: false,
-
+	playerIsInSpace: false,
+	northSpace: 0,
+	southSpace: 0,
+	eastSpace: 0,
+	westSpace: 0
 };
 
 var AEye = 
@@ -90,7 +95,8 @@ function CreateWorld (name, size)
 		letterIndex = IncrementCharacter(letterIndex);
 	}
 	newWorld.gridBlocks = newGridBlocks;
-
+	console.log("Before pop.", newWorld);
+	PopulateBlockSpaceReferences(newWorld)
 	return newWorld;
 }
 
