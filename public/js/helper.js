@@ -87,11 +87,83 @@ function TurnItemUIOn(itemName)
 	{
 
 		case "Umbrella": $('#Umbrella').removeClass("hidden"); break;
-		case "GolddenApple": $('#GoldenApple').removeClass("hidden"); break;
+		case "GoldenApple": $('#GoldenApple').removeClass("hidden"); break;
 		case "RainbowLollipop": $('#RainbowLollipop').removeClass("hidden"); break;
 		case "TalkingGoldfish": $('#TalkingGoldfish').removeClass("hidden"); break;
 		case "YoYo": $('#YoYo').removeClass("hidden"); break;
 		case "SuperMagnets": $('#SuperMagnets').removeClass("hidden"); break;
 	}
 	
+}
+
+function GetSpeechContents(index)
+{
+	var speechContents = [];
+
+	switch (index)
+	{
+		default:
+		{
+			speechContents.push("Hello there, how are you doing today?");
+			speechContents.push("Welcome to A eyes.");
+			speechContents.push("You're awesome!");
+			break;
+		}
+		case 1:
+		{
+			speechContents.push("If you go right from here you might find a chest!");
+			speechContents.push("What is the square root of 2?");
+			speechContents.push("I'm sorry, I'm too tired for this.");
+			break;
+		}
+		case 2:
+		{
+			speechContents.push("There's a chest close by...");
+			speechContents.push("The center of the world is the best part of the world!");
+			speechContents.push("What's black and white and red all over?");
+			break;
+		}
+		case 3:
+		{
+			speechContents.push("If you want the chest, go right.");
+			speechContents.push("I've been hacking all weekend!");
+			speechContents.push("What do you call a bear with no ears?");
+			break;
+		}
+		case 4:
+		{
+			speechContents.push("There's a chest, but it's not close by.");
+			speechContents.push("I think it might rain today, do you have your umbrella?");
+			speechContents.push("Why was six afraid of seven?");
+			break;
+		}
+		case 5:
+		{
+			speechContents.push("The chest is far away to the left.");
+			speechContents.push("Someone in town keeps saying it might rain, curse them!");
+			speechContents.push("What do you call a hungry pirate's parrot?");
+			break;
+		}
+		case 6:
+		{
+			speechContents.push("Check the center of the world for a chest!");
+			speechContents.push("If you find my unicorn, can you please bring it back?");
+			speechContents.push("Which weighs more, a pound of feathers or a pound of gold?");
+			break;
+		}
+		case 7:
+		{
+			speechContents.push("The chest isn't even close.");
+			speechContents.push("I'm searching for my magents, they're super awesome.");
+			speechContents.push("Stop being so irrational!");
+			break;
+		}
+		case 8:
+		{
+			speechContents.push("Go left and you'll find something amazing!");
+			speechContents.push("I live on the edge... of this world.");
+			speechContents.push("What is your favourite shape?");
+			break;
+		}
+	}
 }
