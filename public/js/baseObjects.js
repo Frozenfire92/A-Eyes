@@ -14,6 +14,7 @@ var World =
 var GridBlock = 
 {
 	name: "",
+	description: "",
 	letterIndex: "",
 	backgroundClass: "",
 	blockSpaces: []
