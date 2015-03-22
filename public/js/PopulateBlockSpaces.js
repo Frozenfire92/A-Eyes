@@ -2,14 +2,12 @@
 function PopulateBlockSpaceReferences(world)
 {
 
-console.log("Global index set: ", world);
 	var gIndex = 0;
 
 	for (var i = 0; i <  world.gridBlocks.length; i++) 
 	{
 		for (var j = 0; j < world.gridBlocks[i].blockSpaces.length; j++)
 		{
-			console.log (world.gridBlocks[i].blockSpaces[j]);
 			world.gridBlocks[i].blockSpaces[j].globalIndex = gIndex;
 			gIndex++;
 		}
@@ -65,10 +63,10 @@ console.log("Global index set: ", world);
 	world.gridBlocks[0].blockSpaces[7].westSpace  = 6;
 
 	//Block Space 8
-	world.gridBlocks[0].blockSpaces[7].northSpace = 5;
-	world.gridBlocks[0].blockSpaces[7].southSpace = 15;
-	world.gridBlocks[0].blockSpaces[7].eastSpace  = 47;
-	world.gridBlocks[0].blockSpaces[7].westSpace  = 7;
+	world.gridBlocks[0].blockSpaces[8].northSpace = 5;
+	world.gridBlocks[0].blockSpaces[8].southSpace = 47;
+	world.gridBlocks[0].blockSpaces[8].eastSpace  = 15;
+	world.gridBlocks[0].blockSpaces[8].westSpace  = 7;
 
 //Block B
 	//Block Space 0
@@ -120,10 +118,10 @@ console.log("Global index set: ", world);
 	world.gridBlocks[1].blockSpaces[7].westSpace  = 15;
 
 	//Block Space 8
-	world.gridBlocks[1].blockSpaces[7].northSpace = 14;
-	world.gridBlocks[1].blockSpaces[7].southSpace = 56;
-	world.gridBlocks[1].blockSpaces[7].eastSpace  = 24;
-	world.gridBlocks[1].blockSpaces[7].westSpace  = 16;
+	world.gridBlocks[1].blockSpaces[8].northSpace = 14;
+	world.gridBlocks[1].blockSpaces[8].southSpace = 56;
+	world.gridBlocks[1].blockSpaces[8].eastSpace  = 24;
+	world.gridBlocks[1].blockSpaces[8].westSpace  = 16;
 
 //Block C
 	//Block Space 0
@@ -176,10 +174,10 @@ console.log("Global index set: ", world);
 
 	
 	//Block Space 8
-	world.gridBlocks[2].blockSpaces[7].northSpace = 23;
-	world.gridBlocks[2].blockSpaces[7].southSpace = 65;
-	world.gridBlocks[2].blockSpaces[7].eastSpace  = 33;
-	world.gridBlocks[2].blockSpaces[7].westSpace  = 25;
+	world.gridBlocks[2].blockSpaces[8].northSpace = 23;
+	world.gridBlocks[2].blockSpaces[8].southSpace = 65;
+	world.gridBlocks[2].blockSpaces[8].eastSpace  = 33;
+	world.gridBlocks[2].blockSpaces[8].westSpace  = 25;
 
 
 //Block D
@@ -233,10 +231,10 @@ console.log("Global index set: ", world);
 
 	
 	//Block Space 8
-	world.gridBlocks[3].blockSpaces[7].northSpace = 32;
-	world.gridBlocks[3].blockSpaces[7].southSpace = 74;
-	world.gridBlocks[3].blockSpaces[7].eastSpace  = 42;
-	world.gridBlocks[3].blockSpaces[7].westSpace  = 34;
+	world.gridBlocks[3].blockSpaces[8].northSpace = 32;
+	world.gridBlocks[3].blockSpaces[8].southSpace = 74;
+	world.gridBlocks[3].blockSpaces[8].eastSpace  = 42;
+	world.gridBlocks[3].blockSpaces[8].westSpace  = 34;
 
 
 //Block E
@@ -289,10 +287,10 @@ console.log("Global index set: ", world);
 	world.gridBlocks[4].blockSpaces[7].westSpace  = 42;
 	
 	//Block Space 8
-	world.gridBlocks[4].blockSpaces[7].northSpace = 41;
-	world.gridBlocks[4].blockSpaces[7].southSpace = 83;
-	world.gridBlocks[4].blockSpaces[7].eastSpace  = -1;
-	world.gridBlocks[4].blockSpaces[7].westSpace  = 43;
+	world.gridBlocks[4].blockSpaces[8].northSpace = 41;
+	world.gridBlocks[4].blockSpaces[8].southSpace = 83;
+	world.gridBlocks[4].blockSpaces[8].eastSpace  = -1;
+	world.gridBlocks[4].blockSpaces[8].westSpace  = 43;
 
 
 	//Block F
@@ -339,10 +337,10 @@ console.log("Global index set: ", world);
 	world.gridBlocks[5].blockSpaces[7].eastSpace  = 53;
 	world.gridBlocks[5].blockSpaces[7].westSpace  = 51;
 	//Block Space 8;
-	world.gridBlocks[5].blockSpaces[7].northSpace = 50;
-	world.gridBlocks[5].blockSpaces[7].southSpace = 92;
-	world.gridBlocks[5].blockSpaces[7].eastSpace  = 60;
-	world.gridBlocks[5].blockSpaces[7].westSpace  = 52;
+	world.gridBlocks[5].blockSpaces[8].northSpace = 50;
+	world.gridBlocks[5].blockSpaces[8].southSpace = 92;
+	world.gridBlocks[5].blockSpaces[8].eastSpace  = 60;
+	world.gridBlocks[5].blockSpaces[8].westSpace  = 52;
 
 
 //Block G
@@ -396,10 +394,10 @@ console.log("Global index set: ", world);
 	
 	
 	//Block Space 8
-	world.gridBlocks[6].blockSpaces[7].northSpace = 59;
-	world.gridBlocks[6].blockSpaces[7].southSpace = 101;
-	world.gridBlocks[6].blockSpaces[7].eastSpace  = 69;
-	world.gridBlocks[6].blockSpaces[7].westSpace  = 61;
+	world.gridBlocks[6].blockSpaces[8].northSpace = 59;
+	world.gridBlocks[6].blockSpaces[8].southSpace = 101;
+	world.gridBlocks[6].blockSpaces[8].eastSpace  = 69;
+	world.gridBlocks[6].blockSpaces[8].westSpace  = 61;
 
 
 //Block H
@@ -453,10 +451,10 @@ console.log("Global index set: ", world);
 
 	
 	//Block Space 8
-	world.gridBlocks[7].blockSpaces[7].northSpace = 68;
-	world.gridBlocks[7].blockSpaces[7].southSpace = 110;
-	world.gridBlocks[7].blockSpaces[7].eastSpace  = 78;
-	world.gridBlocks[7].blockSpaces[7].westSpace  = 70;
+	world.gridBlocks[7].blockSpaces[8].northSpace = 68;
+	world.gridBlocks[7].blockSpaces[8].southSpace = 110;
+	world.gridBlocks[7].blockSpaces[8].eastSpace  = 78;
+	world.gridBlocks[7].blockSpaces[8].westSpace  = 70;
 
 
 //Block I
@@ -510,10 +508,10 @@ console.log("Global index set: ", world);
 	
 	
 	//Block Space 8
-	world.gridBlocks[8].blockSpaces[7].northSpace = 77;
-	world.gridBlocks[8].blockSpaces[7].southSpace = 119;
-	world.gridBlocks[8].blockSpaces[7].eastSpace  = 87;
-	world.gridBlocks[8].blockSpaces[7].westSpace  = 79;
+	world.gridBlocks[8].blockSpaces[8].northSpace = 77;
+	world.gridBlocks[8].blockSpaces[8].southSpace = 119;
+	world.gridBlocks[8].blockSpaces[8].eastSpace  = 87;
+	world.gridBlocks[8].blockSpaces[8].westSpace  = 79;
 
 
 //Block J
@@ -567,10 +565,10 @@ console.log("Global index set: ", world);
 	
 	
 	//Block Space 8
-	world.gridBlocks[9].blockSpaces[7].northSpace = 86;
-	world.gridBlocks[9].blockSpaces[7].southSpace = 128;
-	world.gridBlocks[9].blockSpaces[7].eastSpace  = -1;
-	world.gridBlocks[9].blockSpaces[7].westSpace  = 88;
+	world.gridBlocks[9].blockSpaces[8].northSpace = 86;
+	world.gridBlocks[9].blockSpaces[8].southSpace = 128;
+	world.gridBlocks[9].blockSpaces[8].eastSpace  = -1;
+	world.gridBlocks[9].blockSpaces[8].westSpace  = 88;
 
 
 //Block K
@@ -624,10 +622,10 @@ console.log("Global index set: ", world);
 
 	
 	//Block Space 8
-	world.gridBlocks[10].blockSpaces[7].northSpace = 95;
-	world.gridBlocks[10].blockSpaces[7].southSpace = 137;
-	world.gridBlocks[10].blockSpaces[7].eastSpace  = 105;
-	world.gridBlocks[10].blockSpaces[7].westSpace  = 97;
+	world.gridBlocks[10].blockSpaces[8].northSpace = 95;
+	world.gridBlocks[10].blockSpaces[8].southSpace = 137;
+	world.gridBlocks[10].blockSpaces[8].eastSpace  = 105;
+	world.gridBlocks[10].blockSpaces[8].westSpace  = 97;
 
 
 //Block L
@@ -681,10 +679,10 @@ console.log("Global index set: ", world);
 	
 	
 	//Block Space 8
-	world.gridBlocks[11].blockSpaces[7].northSpace =  104;
-	world.gridBlocks[11].blockSpaces[7].southSpace = 146;
-	world.gridBlocks[11].blockSpaces[7].eastSpace  = 114;
-	world.gridBlocks[11].blockSpaces[7].westSpace  = 106;
+	world.gridBlocks[11].blockSpaces[8].northSpace =  104;
+	world.gridBlocks[11].blockSpaces[8].southSpace = 146;
+	world.gridBlocks[11].blockSpaces[8].eastSpace  = 114;
+	world.gridBlocks[11].blockSpaces[8].westSpace  = 106;
 
 
 //Block M
@@ -738,10 +736,10 @@ console.log("Global index set: ", world);
 
 	
 	//Block Space 8
-	world.gridBlocks[12].blockSpaces[7].northSpace = 113;
-	world.gridBlocks[12].blockSpaces[7].southSpace = 155;
-	world.gridBlocks[12].blockSpaces[7].eastSpace  = 123;
-	world.gridBlocks[12].blockSpaces[7].westSpace  = 115;
+	world.gridBlocks[12].blockSpaces[8].northSpace = 113;
+	world.gridBlocks[12].blockSpaces[8].southSpace = 155;
+	world.gridBlocks[12].blockSpaces[8].eastSpace  = 123;
+	world.gridBlocks[12].blockSpaces[8].westSpace  = 115;
 
 
 //Block N
@@ -795,10 +793,10 @@ console.log("Global index set: ", world);
   
 	
 	//Block Space 8
-	world.gridBlocks[13].blockSpaces[7].northSpace = 122;
-	world.gridBlocks[13].blockSpaces[7].southSpace =  164;
-	world.gridBlocks[13].blockSpaces[7].eastSpace  = 132;
-	world.gridBlocks[13].blockSpaces[7].westSpace  = 124;
+	world.gridBlocks[13].blockSpaces[8].northSpace = 122;
+	world.gridBlocks[13].blockSpaces[8].southSpace =  164;
+	world.gridBlocks[13].blockSpaces[8].eastSpace  = 132;
+	world.gridBlocks[13].blockSpaces[8].westSpace  = 124;
 
 
 //Block O
@@ -852,10 +850,10 @@ console.log("Global index set: ", world);
 
 	
 	//Block Space 8
-	world.gridBlocks[14].blockSpaces[7].northSpace = 131;
-	world.gridBlocks[14].blockSpaces[7].southSpace = 173;
-	world.gridBlocks[14].blockSpaces[7].eastSpace  = -1;
-	world.gridBlocks[14].blockSpaces[7].westSpace  = 133;
+	world.gridBlocks[14].blockSpaces[8].northSpace = 131;
+	world.gridBlocks[14].blockSpaces[8].southSpace = 173;
+	world.gridBlocks[14].blockSpaces[8].eastSpace  = -1;
+	world.gridBlocks[14].blockSpaces[8].westSpace  = 133;
 
 
 //Block P
@@ -909,10 +907,10 @@ console.log("Global index set: ", world);
 
 	
 	//Block Space 8
-	world.gridBlocks[15].blockSpaces[7].northSpace = 140;
-	world.gridBlocks[15].blockSpaces[7].southSpace = 182;
-	world.gridBlocks[15].blockSpaces[7].eastSpace  = 150;
-	world.gridBlocks[15].blockSpaces[7].westSpace  = 142;
+	world.gridBlocks[15].blockSpaces[8].northSpace = 140;
+	world.gridBlocks[15].blockSpaces[8].southSpace = 182;
+	world.gridBlocks[15].blockSpaces[8].eastSpace  = 150;
+	world.gridBlocks[15].blockSpaces[8].westSpace  = 142;
 
 
 //Block Q
@@ -966,10 +964,10 @@ console.log("Global index set: ", world);
 
 	
 	//Block Space 8
-	world.gridBlocks[16].blockSpaces[7].northSpace = 149;
-	world.gridBlocks[16].blockSpaces[7].southSpace = 191;
-	world.gridBlocks[16].blockSpaces[7].eastSpace  = 159;
-	world.gridBlocks[16].blockSpaces[7].westSpace  = 151;
+	world.gridBlocks[16].blockSpaces[8].northSpace = 149;
+	world.gridBlocks[16].blockSpaces[8].southSpace = 191;
+	world.gridBlocks[16].blockSpaces[8].eastSpace  = 159;
+	world.gridBlocks[16].blockSpaces[8].westSpace  = 151;
 
 
 //Block R
@@ -1023,10 +1021,10 @@ console.log("Global index set: ", world);
 
 	
 	//Block Space 8
-	world.gridBlocks[17].blockSpaces[7].northSpace = 158;
-	world.gridBlocks[17].blockSpaces[7].southSpace =  200;
-	world.gridBlocks[17].blockSpaces[7].eastSpace  = 168;
-	world.gridBlocks[17].blockSpaces[7].westSpace  = 160;
+	world.gridBlocks[17].blockSpaces[8].northSpace = 158;
+	world.gridBlocks[17].blockSpaces[8].southSpace =  200;
+	world.gridBlocks[17].blockSpaces[8].eastSpace  = 168;
+	world.gridBlocks[17].blockSpaces[8].westSpace  = 160;
 
 
 //Block S
@@ -1080,10 +1078,10 @@ console.log("Global index set: ", world);
 
 	
 	//Block Space 8
-	world.gridBlocks[18].blockSpaces[7].northSpace = 167;
-	world.gridBlocks[18].blockSpaces[7].southSpace = 209;
-	world.gridBlocks[18].blockSpaces[7].eastSpace  = 177;
-	world.gridBlocks[18].blockSpaces[7].westSpace  = 169;
+	world.gridBlocks[18].blockSpaces[8].northSpace = 167;
+	world.gridBlocks[18].blockSpaces[8].southSpace = 209;
+	world.gridBlocks[18].blockSpaces[8].eastSpace  = 177;
+	world.gridBlocks[18].blockSpaces[8].westSpace  = 169;
 
 
 //Block T
@@ -1137,10 +1135,10 @@ console.log("Global index set: ", world);
 
 	
 	//Block Space 8 
-	world.gridBlocks[19].blockSpaces[7].northSpace = 176;
-	world.gridBlocks[19].blockSpaces[7].southSpace = 218;
-	world.gridBlocks[19].blockSpaces[7].eastSpace  = -1;
-	world.gridBlocks[19].blockSpaces[7].westSpace  = 178;
+	world.gridBlocks[19].blockSpaces[8].northSpace = 176;
+	world.gridBlocks[19].blockSpaces[8].southSpace = 218;
+	world.gridBlocks[19].blockSpaces[8].eastSpace  = -1;
+	world.gridBlocks[19].blockSpaces[8].westSpace  = 178;
 
 
 //Block U
@@ -1194,10 +1192,10 @@ console.log("Global index set: ", world);
 
 	
 	//Block Space 8;
-	world.gridBlocks[20].blockSpaces[7].northSpace = 185;
-	world.gridBlocks[20].blockSpaces[7].southSpace = -1;
-	world.gridBlocks[20].blockSpaces[7].eastSpace  = 195;
-	world.gridBlocks[20].blockSpaces[7].westSpace  = 187;
+	world.gridBlocks[20].blockSpaces[8].northSpace = 185;
+	world.gridBlocks[20].blockSpaces[8].southSpace = -1;
+	world.gridBlocks[20].blockSpaces[8].eastSpace  = 195;
+	world.gridBlocks[20].blockSpaces[8].westSpace  = 187;
 
 
 //Block V
@@ -1251,10 +1249,10 @@ console.log("Global index set: ", world);
 
 	
 	//Block Space 8
-	world.gridBlocks[21].blockSpaces[7].northSpace = 194;
-	world.gridBlocks[21].blockSpaces[7].southSpace = -1;
-	world.gridBlocks[21].blockSpaces[7].eastSpace  = 204;
-	world.gridBlocks[21].blockSpaces[7].westSpace  = 196;
+	world.gridBlocks[21].blockSpaces[8].northSpace = 194;
+	world.gridBlocks[21].blockSpaces[8].southSpace = -1;
+	world.gridBlocks[21].blockSpaces[8].eastSpace  = 204;
+	world.gridBlocks[21].blockSpaces[8].westSpace  = 196;
 
 
 //Block W
@@ -1308,10 +1306,10 @@ console.log("Global index set: ", world);
 
 	
 	//Block Space 8
-	world.gridBlocks[22].blockSpaces[7].northSpace = 203;
-	world.gridBlocks[22].blockSpaces[7].southSpace = -1;
-	world.gridBlocks[22].blockSpaces[7].eastSpace  = 213;
-	world.gridBlocks[22].blockSpaces[7].westSpace  = 205;
+	world.gridBlocks[22].blockSpaces[8].northSpace = 203;
+	world.gridBlocks[22].blockSpaces[8].southSpace = -1;
+	world.gridBlocks[22].blockSpaces[8].eastSpace  = 213;
+	world.gridBlocks[22].blockSpaces[8].westSpace  = 205;
 
 
 //Block X
@@ -1365,10 +1363,10 @@ console.log("Global index set: ", world);
 
 	
 	//Block Space 8
-	world.gridBlocks[23].blockSpaces[7].northSpace = 212;
-	world.gridBlocks[23].blockSpaces[7].southSpace = -1;
-	world.gridBlocks[23].blockSpaces[7].eastSpace  = 222;
-	world.gridBlocks[23].blockSpaces[7].westSpace  = 214;
+	world.gridBlocks[23].blockSpaces[8].northSpace = 212;
+	world.gridBlocks[23].blockSpaces[8].southSpace = -1;
+	world.gridBlocks[23].blockSpaces[8].eastSpace  = 222;
+	world.gridBlocks[23].blockSpaces[8].westSpace  = 214;
 
 
 //Block Y
@@ -1422,8 +1420,8 @@ console.log("Global index set: ", world);
 	
 	
 	//Block Space 8;
-	world.gridBlocks[24].blockSpaces[7].northSpace = 221;
-	world.gridBlocks[24].blockSpaces[7].southSpace = -1;
-	world.gridBlocks[24].blockSpaces[7].eastSpace  = -1;
-	world.gridBlocks[24].blockSpaces[7].westSpace  = 223;
+	world.gridBlocks[24].blockSpaces[8].northSpace = 221;
+	world.gridBlocks[24].blockSpaces[8].southSpace = -1;
+	world.gridBlocks[24].blockSpaces[8].eastSpace  = -1;
+	world.gridBlocks[24].blockSpaces[8].westSpace  = 223;
 }

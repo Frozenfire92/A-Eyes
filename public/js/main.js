@@ -1,4 +1,4 @@
-var bg = ["Stairs", "Chevre", "Rainbow", "MicrobialMat", "GridFloor", "DiamondGrid", "Paper", "Stars"];
+var bg = ["Home", "HouseGroup1", "HouseGroup2", "GameRoom", "TownSquare"];
 var index = 0;
 
 function cycleBackgrounds ()

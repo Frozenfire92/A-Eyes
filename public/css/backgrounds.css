@@ -3,22 +3,14 @@
  * Unless otherwise noted
  **/
 
-.MicrobialMat {
+.TownSquare {
 	background:
 		radial-gradient(circle at 0% 50%, rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
 		radial-gradient(at 100% 100%,     rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px), #8a3;
 	background-size: 20px 20px;
 }
 
-.Stairs {
-	background: 
-		linear-gradient(63deg, #999 23%, transparent 23%) 7px 0, 
-		linear-gradient(63deg, transparent 74%, #999 78%), 
-		linear-gradient(63deg, transparent 34%, #999 38%, #999 58%, transparent 62%), #444;
-	background-size: 16px 48px;
-}
-
-.Chevre {
+.Home {
 	background: 
 		linear-gradient(135deg, #00A8DB 25%, transparent 25%) -50px 0,
 		linear-gradient(225deg, #00A8DB 25%, transparent 25%) -50px 0,
@@ -28,7 +20,7 @@
 	background-color: #00C6C9;
 }
 
-.Rainbow {
+.GameRoom {
 	background: 
 		radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.15) 30%, rgba(255,255,255,.3) 32%, rgba(255,255,255,0) 33%) 0 0,
 		radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.1) 11%, rgba(255,255,255,.3) 13%, rgba(255,255,255,0) 14%) 0 0,
@@ -41,7 +33,7 @@
 	background-color: #840b2a;
 }
 
-.GridFloor {
+.HouseGroup1 {
 	background:
 		linear-gradient(135deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
 		linear-gradient(225deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
@@ -49,14 +41,14 @@
 	background-size: 64px 128px
 }
 
-.DiamondGrid {
+.HouseGroup2 {
 	background-color: #eee;
 	background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), 
 		linear-gradient(-45deg, black 25%, transparent 25%, transparent 75%, black 75%, black);
 	background-size:60px 60px;
 }
 
-.Paper {
+.Notebook {
 	background-color: #fff; 
 	background-image: 
 		linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),

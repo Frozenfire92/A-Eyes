@@ -8,14 +8,14 @@ var World =
 {
 	name: "",
 	size: 5,
-	gridBlocks: [],
-	timeOfDay: ""
+	gridBlocks: []
 };
 
 var GridBlock = 
 {
 	name: "",
 	letterIndex: "",
+	backgroundClass: "",
 	blockSpaces: []
 };
 
@@ -68,8 +68,7 @@ var BaseNPC =
 var BaseItem = 
 {
 	name: "",
-	description: "",
-	obtained: false
+	description: ""
 };
 
 function CreateLocation(gridBlockLetterIndex, blockSpaceIndex)
@@ -85,7 +84,6 @@ function CreateWorld (name, size)
 	var newWorld = jQuery.extend(true, {}, World);
 	newWorld.name = name;
 	newWorld.size = size;
-	newWorld.timeOfDay = "Morning";
 
 	var newGridBlocks = [];
 	var letterIndex = "A";
@@ -95,7 +93,6 @@ function CreateWorld (name, size)
 		letterIndex = IncrementCharacter(letterIndex);
 	}
 	newWorld.gridBlocks = newGridBlocks;
-	console.log("Before pop.", newWorld);
 	PopulateBlockSpaceReferences(newWorld)
 	return newWorld;
 }
@@ -127,9 +124,8 @@ function CreateBlockSpace(index)
 function CreateChest(name, item)
 {
 	var newChest = jQuery.extend(true, {}, Chest);
-	//newChest.contents = item;
 	newChest.name = name;
-
+	newChest.item = item;
 	return newChest;
 }
 
@@ -149,12 +145,11 @@ function CreateNPC(name, speechContents)
 	return newNPC;
 }
 
-function CreateItem(name, description, obtained)
+function CreateItem(name, description)
 {
 	var newItem = jQuery.extend(true, {}, BaseItem);
 	newItem.name = name;
 	newItem.description = description;
-	newItem.obtained = obtained;
 	return newItem;
 }
 
