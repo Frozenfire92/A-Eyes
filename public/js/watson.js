@@ -30,12 +30,12 @@ $(document).ready(function(){
 			{
 				speech.start();
 				microphone.addClass('green');
-				talkIndicator.html("Listening, press space again to stop");
+				instructions.html("Listening, press space again to stop");
 			} else {
 				speech.stop();
 				microphone.removeClass('green');
 				microphone.addClass('orange');
-				talkIndicator.html("Processing Speech");
+				instructions.html("Processing Speech");
 			}
 		}
 	});
@@ -70,7 +70,7 @@ $(document).ready(function(){
 					text += '.';
 					microphone.removeClass('orange');
 					microphone.removeClass('green');
-					talkIndicator.html("Press space to talk");
+					instructions.html("Press space to talk");
 				}
 				recentCommand.html(text);
 			}
