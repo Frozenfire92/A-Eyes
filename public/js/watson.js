@@ -130,6 +130,7 @@ function parseSpeech(input)
 	//--- Help
 	else if (input.indexOf("help") != -1 ||
 			 input.indexOf("instruction") != -1 ||
+			 input.indexOf("intruct") != -1 ||
 			 input.indexOf("teach") != -1)
 	{
 		Help();
