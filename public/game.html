@@ -9,13 +9,16 @@
 	<link rel="stylesheet" href="../fontawesome/css/font-awesome.min.css">
 	<!-- JS -->
 	<script type="text/javascript" src="../jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="../socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="../js/speech-recognizer.js"></script>
+	<script type="text/javascript" src="../js/watson.js"></script>
 	<script type="text/javascript" src="../js/helper.js"></script>
 	<script type="text/javascript" src="../js/baseObjects.js"></script>
 	<script type="text/javascript" src="../js/gameController.js"></script>
 	<script type="text/javascript" src="../js/main.js"></script>
 	<script type="text/javascript" src="../js/gameTest.js"></script>
 </head>
-<body class="Chevre">
+<body class="Home">
 	<!-- Menu Bar -->
 	<div class="header">
 	    <div class="pure-menu pure-menu-horizontal">
@@ -50,12 +53,12 @@
 			<hr>
 
 			<h3>Items</h3>
-			<div class="item hidden">Golden Apple</div>
-			<div class="item hidden">Umbrella</div>
-			<div class="item hidden">Rainbow Lollipop</div>
-			<div class="item hidden">Talking Goldfish</div>
-			<div class="item hidden">A Yo-Yo</div>
-			<div class="item hidden">Super Magnets</div>
+			<div class="item hidden" id="GoldenApple">Golden Apple</div>
+			<div class="item hidden" id="Umbrella">Umbrella</div>
+			<div class="item hidden" id="RainbowLollipop">Rainbow Lollipop</div>
+			<div class="item hidden" id="TalkingGoldfish">Talking Goldfish</div>
+			<div class="item hidden" id="YoYo">A Yo-Yo</div>
+			<div class="item hidden" id="SuperMagnets">Super Magnets</div>
 
 	    </div>
 
@@ -68,6 +71,9 @@
 		    	<h1 class="splash-head">Text being spoken to you</h1>
 	    	</div>
 	    </div>
+
+	    <!-- Audio -->
+	    <audio autoplay preload='auto' autobuffer></audio>
 	</div>
 </body>
 </html>
