@@ -5,8 +5,8 @@
 
 .TownSquare {
 	background:
-		radial-gradient(circle at 0% 50%, rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
-		radial-gradient(at 100% 100%,     rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px), #8a3;
+		radial-gradient(circle at 0% 50%, rgba(12, 232, 465, 0) 9px, #613 10px, rgba(12, 232, 465, 0) 11px) 0px 10px,
+		radial-gradient(at 100% 100%,     rgba(12, 232, 465, 0) 9px, #613 10px, rgba(12, 232, 465, 0) 11px), #8a3;
 	background-size: 20px 20px;
 }
 
@@ -18,6 +18,16 @@
 		linear-gradient(45deg, #00A8DB 25%, transparent 25%);	
 	background-size: 100px 100px;
 	background-color: #00C6C9;
+}
+
+.GameHouse {
+	background: 
+		linear-gradient(135deg, #FF680D 25%, transparent 25%) -50px 0,
+		linear-gradient(225deg, #FF680D 25%, transparent 25%) -50px 0,
+		linear-gradient(315deg, #FF680D 25%, transparent 25%),
+		linear-gradient(45deg, #FF680D 25%, transparent 25%);	
+	background-size: 100px 100px;
+	background-color: #E83F0C;
 }
 
 .GameRoom {
@@ -35,33 +45,33 @@
 
 .HouseGroup1 {
 	background:
-		linear-gradient(135deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
-		linear-gradient(225deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
-	background-color:#708090;
+		linear-gradient(135deg, #E80C5E 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
+		linear-gradient(225deg, #E80C5E 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
+	background-color:#E80C5E;
 	background-size: 64px 128px
 }
 
 .HouseGroup11 {
 	background:
-		linear-gradient(135deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
-		linear-gradient(225deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
-	background-color:#708090;
+		linear-gradient(135deg, #0C83E8 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
+		linear-gradient(225deg, #0C83E8 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
+	background-color:#0C83E8;
 	background-size: 64px 128px
 }
 
 .HouseGroup12 {
 	background:
-		linear-gradient(135deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
-		linear-gradient(225deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
-	background-color:#708090;
+		linear-gradient(135deg, #FFA407 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
+		linear-gradient(225deg, #FFA407 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
+	background-color:#FFA407;
 	background-size: 64px 128px
 }
 
 .HouseGroup13 {
 	background:
-		linear-gradient(135deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
-		linear-gradient(225deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
-	background-color:#708090;
+		linear-gradient(135deg, #A90CE8 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
+		linear-gradient(225deg, #A90CE8 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
+	background-color:#A90CE8;
 	background-size: 64px 128px
 }
 

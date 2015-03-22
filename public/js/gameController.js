@@ -101,8 +101,8 @@ function DescribeItems()
 	{
 		var words = "Your inventory contents are: ";
 		items.forEach(function(speech){
-			words += ", ";
 			words += speech;
+			words += ", ";
 		});
 		textToSpeech(words);
 	}
@@ -305,7 +305,7 @@ function SetUpBackgrounds()
 	world.gridBlocks[1].backgroundClass = "TownSquare";
 	world.gridBlocks[2].backgroundClass = "TownSquare";
 	world.gridBlocks[3].backgroundClass = "TownSquare";
-	world.gridBlocks[4].backgroundClass = "Gamehouse";
+	world.gridBlocks[4].backgroundClass = "GameHouse";
 	world.gridBlocks[5].backgroundClass = "HouseGroup1";
 	world.gridBlocks[6].backgroundClass = "TownSquare";
 	world.gridBlocks[7].backgroundClass = "TownSquare";
@@ -407,7 +407,17 @@ function FindItemOnBlockSpace(currentBlockSpace, itemToFind)
 						//Give player that spaceItem
 						items.push(currentBlockSpace.spaceItem.item.name);
 						TurnItemUIOn(currentBlockSpace.spaceItem.item.name);
-						textToSpeech ("You found the "+ currentBlockSpace.spaceItem.item.name);
+						
+
+						switch (currentBlockSpace.spaceItem.item.name)
+						{
+							case "Umbrella": textToSpeech ("You found the "+ currentBlockSpace.spaceItem.item.name + ". You will probably need it, it might rain."); break;
+							case "GoldenApple": textToSpeech ("You found the "+ currentBlockSpace.spaceItem.item.name + ". Eat it and gain all the knowledge."); break;
+							case "RainbowLollipop": textToSpeech ("You found the "+ currentBlockSpace.spaceItem.item.name + ". It will turn you into a rainbow!"); break;
+							case "TalkingGoldfish": textToSpeech ("You found the "+ currentBlockSpace.spaceItem.item.name + ". You are granted unlimited wishes!"); break;
+							case "YoYo": textToSpeech ("You found the "+ currentBlockSpace.spaceItem.item.name + ". These are pretty fun."); break;
+							case "SuperMagnets": textToSpeech ("You found the "+ currentBlockSpace.spaceItem.item.name + ". I think someone was looking for those."); break;
+						}
 						return true;
 					}
 					else
