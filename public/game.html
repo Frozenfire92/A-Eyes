@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A-Eyes</title>
+	<!-- CSS -->
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/backgrounds.css">
+	<link rel="stylesheet" href="../pure/pure-min.css">
+	<link rel="stylesheet" href="../fontawesome/css/font-awesome.min.css">
+	<!-- JS -->
+	<script type="text/javascript" src="../jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/helper.js"></script>
+	<script type="text/javascript" src="../js/baseObjects.js"></script>
+	<script type="text/javascript" src="../js/gameController.js"></script>
+	<script type="text/javascript" src="../js/main.js"></script>
+	<script type="text/javascript" src="../js/gameTest.js"></script>
+</head>
+<body class="Chevre">
+	<!-- Menu Bar -->
+	<div class="header">
+	    <div class="pure-menu pure-menu-horizontal">
+	        <a class="pure-menu-heading" href="#">A-Eyes</a>
+
+	        <ul class="pure-menu-list">
+	            <li class="pure-menu-item"><a href="about.html" class="pure-menu-link"><i class="fa fa-question-circle"></i></a></li>
+	        </ul>
+	    </div>
+	</div>
+	
+	<!-- Main Content -->
+	<div class="pure-g">
+		<!-- Gamepad button -->
+		<div id="menu" class="overlay-button-contain menu-overlays">
+			<i class="fa fa-gamepad fa-3x overlay-button"></i>
+		</div>
+		<!-- Overlay controls -->
+	    <div id="controls" class="pure-u-1-5 menu-overlays game-controls">
+	    	<h3>Commands</h3>
+	    	
+	    	<aside class="controls">
+	    		<div class="navigate-left enabled"></div>
+	    		<div class="navigate-right enabled"></div>
+	    		<div class="navigate-up enabled"></div>
+	    		<div class="navigate-down enabled"></div>
+	    	</aside>
+
+	    	<button class="pure-button button-large pure-button-primary">Action</button><br><br>
+	    	<button class="pure-button button-large pure-button-primary">Interact with A-Eye</button><br><br>
+
+			<hr>
+
+			<h3>Items</h3>
+			<div class="item hidden">Golden Apple</div>
+			<div class="item hidden">Umbrella</div>
+			<div class="item hidden">Rainbow Lollipop</div>
+			<div class="item hidden">Talking Goldfish</div>
+			<div class="item hidden">A Yo-Yo</div>
+			<div class="item hidden">Super Magnets</div>
+
+	    </div>
+
+		<!-- Speech / Notifications -->
+	    <div class="pure-u-1">
+	    	<div class="containment menu-overlays center">
+		    	<h3 id="talkIndicator">Press space to talk</h3>
+		    	<i class="fa fa-microphone fa-3x" id="microphone"></i>
+		    	<p id="recentCommand">...</p>
+		    	<h1 class="splash-head">Text being spoken to you</h1>
+	    	</div>
+	    </div>
+	</div>
+</body>
+</html>
