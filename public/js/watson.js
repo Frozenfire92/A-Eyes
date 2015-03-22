@@ -71,6 +71,6 @@ $(document).ready(function(){
 				recentCommand.html(text);
 			}
 		}
-		transcript.show();
+		recentCommand.show();
 	};
 });
