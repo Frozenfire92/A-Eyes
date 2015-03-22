@@ -9,7 +9,7 @@ var items = [];
 function InstantiateWorld()
 {
 	world = CreateWorld("Sarah's World", 5);
-
+	world.gridBlocks[0].blockSpaces[4].playerIsInSpace = true;
 	SetUpChests();
 	SetUpNPCs();
 	SetUpBackgrounds();
@@ -20,20 +20,49 @@ function InstantiateWorld()
 	console.log	("This is me ", player);
 }
 
+
+function TakeAction(actionToTake)
+{
+	switch (actionToTake)
+	{
+		case "MoveUp": 		MovePlayer("Up"); break;
+		case "MoveDown":  	MovePlayer("Down"); break;
+		case "MoveRight": 	MovePlayer("Right"); break;
+		case "MoveLeft": 	MovePlayer("Left"); break;
+		case "Find": 		Find(); break;
+		case "Talk": 		Talk(); break;
+	}
+}
+
+function Find()
+{
+	var blockSpaceToCheck = FindBlockSpace(player.currentLocation);
+	if (FindItemOnBlockSpace(blockSpaceToCheck, "Chest"))
+	{
+		blockSpaceToCheck.occupied = false;
+		blockSpaceToCheck.spaceItem = null;
+		console.log ("ITEMS: ", items);
+	}
+}
+
+function Talk()
+{
+	console.log("Talking to NPC: ", FindItemOnBlockSpace(FindBlockSpace(player.currentLocation), "NPC"));
+}
+
 function MovePlayer(direction)
 {
 	//Change the player.currentLocation to be the location of the space that it is moving to
-	console.log("Moving player ", direction);
-	console.log("Player is currently at location: ", player.currentLocation);
+	var temp = player.currentLocation;
 	player.currentLocation = FindLocationToMoveTo(direction);
-	console.log("Player (after move)  at location: ", player.currentLocation);
-	
+	if (player.currentLocation == null) player.currentLocation = temp;
+	console.log(player);
 }
-
 function FindLocationToMoveTo(direction)
 {
+	FindBlockSpace(player.currentLocation).playerIsInSpace = false;
 	//Take the space from that direction of the current location and return that new space location
-	var locationToMoveTo;
+	var locationToMoveTo = null;
 
 	for (var i = 0; i <  world.gridBlocks.length; i++) 
 	{
@@ -78,11 +107,20 @@ function FindLocationToMoveTo(direction)
 						break;
 					}
 				}
-					console.log("Moving to location " , locationToMoveTo);
 			}
 		}
 	}
 
+	if (locationToMoveTo == null)
+	{
+		console.log("Can't go that way!");
+	}
+	else
+	{
+		PlayerIsNotInSpace();
+		FindBlockSpace(locationToMoveTo).playerIsInSpace = true;
+		console.log("Player is moving into space ", locationToMoveTo);
+	}
 	return locationToMoveTo;
 }
 
@@ -115,7 +153,7 @@ function SetUpChests()
 	var chest1 = PutObjectInBlockSpace(CreateChest("Chest1",item1), CreateLocation("A", 4));
 	chests.push(chest1);
 
-	var item2 = CreateItem("GolddenApple", "This apple will allow all the knowledge to grow inside you!");
+	var item2 = CreateItem("GoldenApple", "This apple will allow all the knowledge to grow inside you!");
 	var chest2 = PutObjectInBlockSpace(CreateChest("Chest2", item2), CreateLocation("D", 0));
 	chests.push(chest2);
 		
@@ -209,12 +247,49 @@ function GetBlockSpaceFromGlobalIndex(globalIndex)
 
 function GetLocationFromGlobalIndex(globalIndex)
 {
-	console.log("Looking for location at global index: ", globalIndex);
 	for (var i = 0; i <  world.gridBlocks.length; i++) 
 	{
 		for (var j = 0; j < world.gridBlocks[i].blockSpaces.length; j++)
 		{
 			if (world.gridBlocks[i].blockSpaces[j].globalIndex == globalIndex) return CreateLocation(GetCharacterFromIndex(i), j);
+		}
+	}
+}
+
+function FindItemOnBlockSpace(currentBlockSpace, itemToFind)
+{
+	//Find either a chest or an NPC in the current block space
+	console.log("Finding item ", itemToFind);
+	switch (itemToFind)
+	{
+		case "Chest":  
+		{
+			if (currentBlockSpace.spaceItem.item.name == "Umbrella" ||
+				currentBlockSpace.spaceItem.item.name == "GoldenApple" ||
+				currentBlockSpace.spaceItem.item.name == "RainbowLollipop" ||
+				currentBlockSpace.spaceItem.item.name == "TalkingGoldfish" ||
+				currentBlockSpace.spaceItem.item.name == "YoYo" ||
+				currentBlockSpace.spaceItem.item.name == "SuperMagnets" )
+			{
+				//Give player that spaceItem
+				items.push(currentBlockSpace.spaceItem.item.name);
+				TurnItemUIOn(currentBlockSpace.spaceItem.item.name);
+				return true;
+			}
+			else return false;
+		}
+		case "NPC": 
+		{
+			if (currentBlockSpace.spaceItem.item == "NPC1" ||
+				currentBlockSpace.spaceItem.item == "NPC2" ||
+				currentBlockSpace.spaceItem.item == "NPC3" ||
+				currentBlockSpace.spaceItem.item == "NPC4" ||
+				currentBlockSpace.spaceItem.item == "NPC5" ||
+				currentBlockSpace.spaceItem.item == "NPC6" ||
+				currentBlockSpace.spaceItem.item == "NPC7" ||
+				currentBlockSpace.spaceItem.item == "NPC8" ) 
+				return true;
+			else return false;
 		}
 	}
 }
